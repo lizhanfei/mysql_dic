@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title></title>
+	<meta keywprd=""/>
+	<meta description=""/>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="http://getcontent.sinaapp.com//public/css/layout.css" type="text/css" media="all" />
+	<style type="text/css">
+		table.gridtable {
+			font-family: verdana,arial,sans-serif;
+			font-size:11px;
+			color:#333333;
+			border-width: 1px;
+			border-color: #666666;
+			border-collapse: collapse;
+			width:600px;
+		}
+		table.gridtable th {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #666666;
+			background-color: #dedede;
+		}
+		table.gridtable td {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #666666;
+			background-color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+<div class="zxx_out_box" >
+	<div class="zxx_in_box" style="margin-left:auto;margin-right:auto;">
+	<div class="zxx_header">
+        <h1>数据表</h1>
+    </div>
+	    <div>
+		    <?php foreach($tableInfos as $oneTable){?>
+			<table class="gridtable">
+				<tr>
+					<th colspan="4"><?php echo $oneTable['name'];?></th>
+				</tr>
+				<tr>
+					<td style="border-right-width:0"><?php echo $oneTable['infos']['engine'];?></td>
+					<td style="border-width:0"><?php echo $oneTable['infos']['charset'];?></td>
+					<td colspan="2" style="border-left-width:0"><?php echo $oneTable['infos']['comment'];?></td>
+				</tr>
+				<tr>
+					<td>名称</td>
+					<td>类型</td>
+					<td>注释</td>
+				</tr>
+				<?php foreach($oneTable['infos']['words'] as $oneWords){?>
+				<tr>
+					<td><?php echo $oneWords['name']?></td>
+					<td><?php echo $oneWords['type']?></td>
+					<td><?php echo $oneWords['comment']?></td>
+				</tr>
+				<?php }?>
+			</table>
+			<br/>
+			<?php }?>
+		</div>
+	</div>
+</dvi>
+</body>
